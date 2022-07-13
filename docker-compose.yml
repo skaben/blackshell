@@ -12,15 +12,13 @@ services:
       - HOST=0.0.0.0
       - CHOKIDAR_USEPOLLING=True
       - BROWSER=None
-    command: >
-      sh -c "sleep 180000000"
     ports:
       - 3000:3000
 
   mock-server:
     image: clue/json-server
     volumes:
-      - ./db.json:/data/db.json
+      - ./mock/db.json:/data/db.json
     ports:
       - 5000:80
 
