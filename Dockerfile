@@ -1,17 +1,20 @@
-FROM node:18-alpine AS builder
-WORKDIR /opt/app
+FROM node:16.16.0-alpine AS base
 RUN npm install \
 	npm@latest \
-	react-scripts@latest \
 	react-dom@latest \
 	react@latest \
-	create-react-app@latest \
 	-g --silent
 
-FROM builder AS main
+FROM base AS main
+
 ENV PATH /opt/app/node_modules/.bin:$PATH
-COPY ./app/package*.json ./
-RUN npm install --silent \
-	&& chown -R node:node /opt/app/node_modules
+
+WORKDIR /opt/app
+COPY ./app/package.json ./app/package-lock.json /opt/app/
+RUN npm i
+COPY . .
+RUN chown -R node:node /opt/app
 USER node
 EXPOSE 3000
+
+CMD ["sh", "/opt/entrypoint.sh"]

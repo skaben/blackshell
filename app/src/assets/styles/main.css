@@ -1,0 +1,36 @@
+@import './reset.css';
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  background: var(--black);
+  color: rgba(var(--color-main), .8);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: rgba(var(--color-main), .8);
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  color: var(--white);
+}
+
+.animate-centered {
+  transform-box: fill-box;
+  transform-origin: center;
+}

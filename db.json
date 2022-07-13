@@ -1,0 +1,47 @@
+{
+    "configs": [
+        {
+            "standalone": true,
+            "debug": true,
+            "api_url": "",
+            "current": "mode_id_1",
+            "modes": {
+                "default": {
+                    "status": "off"
+                },
+                "mode_id_1": {
+                    "status": "ok",
+                    "header": "header text",
+                    "footer": "footer text",
+                    "menu": [
+                        {
+                            "type": "console",
+                            "text": "открыть консоль",
+                            "timer": 0,
+                            "locked": true
+                        },
+                        {
+                            "type": "text",
+                            "text": "прочитать игровой документ",
+                            "timer": 0,
+                            "value": "это короткий текст"
+                        }
+                    ]
+                },
+                "mode_id_2": {
+                    "status": "ok",
+                    "header": "mode 2 text",
+                    "footer": "footer text mode 2",
+                    "menu": [
+                        {
+                            "type": "text",
+                            "text": "прочитать инструкцию",
+                            "timer": 0,
+                            "value": "инструкция тут"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
