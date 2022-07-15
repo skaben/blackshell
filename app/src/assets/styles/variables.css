@@ -2,6 +2,12 @@
   --white: white;
   --black: black;
 
+  --color-dark: rgb(44, 44, 44);
+  --color-accent: rgb(158, 255, 136);
+
   --color-danger: rgb(252, 65, 0);
   --color-main: rgb(243, 255, 236);
+
+  --md-breakpoint: 768px;
+  --sm-breakpoint: 420px;
 }

@@ -1,14 +1,14 @@
-const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src/index.js"),
+  entry: path.resolve(__dirname, './src/index.js'),
   devServer: {
     hot: true,
     port: 3000,
     static: {
-      directory: path.join(__dirname, "src")
+      directory: path.join(__dirname, 'src')
     },
     compress: true
   },
@@ -23,33 +23,42 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
       },
-    ],
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        type: 'asset/resource'
+      }
+    ]
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ['*', '.js', '.jsx'],
     alias: {
       Components: path.resolve(__dirname, 'src/components'),
-      Assets: path.resolve(__dirname, "src/assets")
+      Assets: path.resolve(__dirname, 'src/assets')
     }
   },
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, './dist'),
+    filename: 'bundle.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      entry: "index.js",
-      title: "Blackshell free from CRA",
-      template: path.resolve(__dirname, "public", "index.html")
+      entry: 'index.js',
+      title: 'Blackshell free from CRA',
+      template: path.resolve(__dirname, 'public', 'index.html')
     }),
     new MiniCssExtractPlugin({
-      filename: "css/main.css"
+      filename: 'css/main.css'
     })
-  ],
-};
+  ]
+}

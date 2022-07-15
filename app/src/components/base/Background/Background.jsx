@@ -5,7 +5,7 @@ import Bevel from 'Assets/svg/Bevel';
 export const Background = () => {
   return (
     <div className={styles.root}>
-      <Bevel className={styles.bevel}/>
+      <Bevel className={styles.bevel}/> {/* todo: вот это надо переписать на нормальный SVG */}
       <div className={styles.animated}></div>
       <div className={styles.textured}></div>
     </div>

@@ -1,47 +1,95 @@
 {
     "configs": [
         {
+            "id": "config_id_1",
             "standalone": true,
             "debug": true,
             "api_url": "",
             "current": "mode_id_1",
-            "modes": {
-                "default": {
-                    "status": "off"
-                },
-                "mode_id_1": {
-                    "status": "ok",
-                    "header": "header text",
-                    "footer": "footer text",
-                    "menu": [
-                        {
-                            "type": "console",
-                            "text": "открыть консоль",
-                            "timer": 0,
-                            "locked": true
-                        },
-                        {
-                            "type": "text",
-                            "text": "прочитать игровой документ",
-                            "timer": 0,
-                            "value": "это короткий текст"
-                        }
-                    ]
-                },
-                "mode_id_2": {
-                    "status": "ok",
-                    "header": "mode 2 text",
-                    "footer": "footer text mode 2",
-                    "menu": [
-                        {
-                            "type": "text",
-                            "text": "прочитать инструкцию",
-                            "timer": 0,
-                            "value": "инструкция тут"
-                        }
-                    ]
-                }
-            }
+            "modes": [
+                "default",
+                "mode_id_1",
+                "mode_id_2"
+            ]
         }
-    ]
+    ],
+    "modes": {
+        "default": {
+            "status": "off"
+        },
+        "mode_id_1": {
+            "status": "ok",
+            "header": "header text",
+            "footer": "footer text",
+            "users": [
+                "boon",
+                "jensen",
+                "flatline"
+            ],
+            "menu": [
+                {
+                    "type": "console",
+                    "text": "открыть консоль",
+                    "timer": 0,
+                    "locked": true
+                },
+                {
+                    "type": "text",
+                    "text": "прочитать игровой документ",
+                    "timer": 0,
+                    "value": "это короткий текст"
+                }
+            ]
+        },
+        "mode_id_2": {
+            "status": "ok",
+            "header": "mode 2 text",
+            "footer": "footer text mode 2",
+            "users": [
+                "jensen",
+                "boon"
+            ],
+            "menu": [
+                {
+                    "title": "menu row one",
+                    "type": "text",
+                    "content": "this is text 1"
+                },
+                {
+                    "title": "menu row two",
+                    "type": "text",
+                    "content": "this is text 2"
+                },
+                {
+                    "title": "menu row three",
+                    "type": "text",
+                    "content": "this is text 3"
+                }
+            ]
+        }
+    },
+    "users": {
+        "jensen": {
+            "username": "Adam Jensen",
+            "hackable": false,
+            "hacked": false,
+            "root": true,
+            "password": "1K0q_#sz"
+        },
+        "flatline": {
+            "username": "Johnny Flatline",
+            "hackable": true,
+            "hacked": false,
+            "root": false,
+            "password": "dixi3fl4t",
+            "menu": {}
+        },
+        "boon": {
+            "username": "Toshiro Boon",
+            "hackable": true,
+            "hacked": false,
+            "root": true,
+            "password": "letmein"
+        }
+    }
 }

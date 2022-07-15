@@ -1,0 +1,13 @@
+.root {
+  display: grid;
+  grid: minmax(2rem, 5rem) 1fr minmax(2rem, 5rem) / 1fr;
+  padding: 2rem 1.5rem 2rem 1.25rem;
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .root {
+    padding: 1.25rem .5rem;
+  }
+}

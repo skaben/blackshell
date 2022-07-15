@@ -1,0 +1,49 @@
+.main {
+  display: grid;
+  grid: 1fr / 400px 1fr;
+  height: 100%;
+}
+
+.menu {
+  position: relative;
+  left: 2rem;
+}
+
+.logo {
+  width: 25em;
+  height: 25rem;
+  opacity: .2;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-self: center;
+  margin: auto;
+  animation: rotation 12s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .logo {
+    display: none;
+  }
+
+  .main {
+    display: block;
+    max-width: 420px;
+    height: 100%;
+    margin: auto;
+  }
+
+  .menu {
+    left: 0;
+  }
+
+}

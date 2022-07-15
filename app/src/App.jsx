@@ -1,12 +1,11 @@
 import React from 'react';
-import { Layout } from 'Components/base/Layout/Layout';
-import { Background } from 'Components/base/Background/Background';
+import { Main } from './pages/Main/Main';
+import { Offline } from './pages/Offline/Offline';
 
 export const App = () => {
   return (
     <>
-      <Layout />
-      <Background />
+      <Main/>
     </>
   );
 }
