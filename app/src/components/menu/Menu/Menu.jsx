@@ -7,7 +7,6 @@ export const Menu = ({ items, className }) => {
   return (
     <nav className={classnames(className, styles.root)}>
         {items.map(item => {
-          item.delay = 2500;
           return (
             <>
               <div className={styles.connection}></div>

@@ -1,23 +1,27 @@
-.main {
-  display: grid;
-  grid: 1fr / 400px 1fr;
+.root {
   height: 100%;
+  padding: 0 1.5rem;
 }
 
-.menu {
-  position: relative;
-  left: 2rem;
+.main {
+  height: 100%;
+  display: grid;
+  grid: 1fr / 420px 1fr;
 }
 
 .logo {
+  position: relative;
+  align-self: center;
+  margin: auto;
   width: 25em;
   height: 25rem;
+  bottom: 0;
+  left: 0;
+  transform: translateY(-50%);
   opacity: .2;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  align-self: center;
-  margin: auto;
   animation: rotation 12s infinite linear;
 }
 
@@ -31,19 +35,19 @@
 }
 
 @media only screen and (max-width: 1023px) {
+  .root {
+    padding: .5rem;
+  }
+  
   .logo {
     display: none;
   }
 
   .main {
     display: block;
-    max-width: 420px;
     height: 100%;
+    max-width: 400px;
     margin: auto;
-  }
-
-  .menu {
-    left: 0;
   }
 
 }

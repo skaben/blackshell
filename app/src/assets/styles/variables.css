@@ -7,6 +7,7 @@
 
   --color-danger: rgb(252, 65, 0);
   --color-main: rgb(243, 255, 236);
+  --color-off: rgb(190, 190, 190);
 
   --md-breakpoint: 768px;
   --sm-breakpoint: 420px;

@@ -36,7 +36,7 @@ const testItems = [
 
 export const Main = () => {
   return (
-    <>
+    <div className={styles.root}>
       <Layout 
         header={<RandomizeText value={"this is main menu"}></RandomizeText>}
         main={
@@ -45,8 +45,9 @@ export const Main = () => {
             <div className={styles.logo} style={{backgroundImage: `url(${logo})`}}></div>
           </div>
         }
+        footer={<RandomizeText value={"this is screen where all routing should happens"}></RandomizeText>}
       />
       <Background/>
-    </>
+    </div>
   )
 }

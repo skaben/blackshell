@@ -1,6 +1,7 @@
 @import './reset.css';
 @import './variables.css';
 @import '../fonts/fonts.css';
+@import './animations.css';
 
 :root {
   --mono-font: 'IBM Plex Mono', monospace;
@@ -17,7 +18,6 @@ body, html {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  min-width: 420px;
   font-family: var(--mono-font);
   color: var(--color-main);
 }
