@@ -1,11 +1,12 @@
 import React from 'react';
-import styles from './styles.module.css';
-import Bevel from 'Assets/svg/Bevel';
+import classnames from 'classnames';
+import styles from './styles.module.scss';
+import Bevel from './Bevel.jsx';
 
-export const Background = () => {
+export const Background = ({ className }) => {
   return (
-    <div className={styles.root}>
-      <Bevel className={styles.bevel}/> {/* todo: вот это надо переписать на нормальный SVG */}
+    <div className={classnames(styles.root, className)}>
+      <Bevel className={styles.bevel}/> {/* todo: вот эту дичь надо переписать на нормальный SVG */}
       <div className={styles.animated}></div>
       <div className={styles.textured}></div>
     </div>

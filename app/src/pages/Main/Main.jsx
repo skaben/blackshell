@@ -3,8 +3,7 @@ import { Background } from "Components/base/Background/Background";
 import { Layout } from 'Components/base/Layout/Layout';
 import { Menu } from 'Components/menu/Menu/Menu';
 import { RandomizeText } from 'Components/effects/RandomizeText/RandomizeText';
-import logo from 'Assets/img/hud.png';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 
 const testItems = [
@@ -38,16 +37,16 @@ export const Main = () => {
   return (
     <div className={styles.root}>
       <Layout 
+        className={styles.content}
         header={<RandomizeText value={"this is main menu"}></RandomizeText>}
         main={
           <div className={styles.main}>
             <Menu items={testItems} className={styles.menu}/>
-            <div className={styles.logo} style={{backgroundImage: `url(${logo})`}}></div>
           </div>
         }
         footer={<RandomizeText value={"this is screen where all routing should happens"}></RandomizeText>}
       />
-      <Background/>
+      <Background className={styles.background}/>
     </div>
   )
 }

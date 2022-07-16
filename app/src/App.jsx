@@ -1,11 +1,18 @@
 import React from 'react';
 import { Main } from './pages/Main/Main';
-import { Offline } from './pages/Offline/Offline';
 
-export const App = () => {
+const App = () => {
   return (
     <>
       <Main/>
     </>
+  );
+}
+
+export const renderApp = (root) => {
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   );
 }

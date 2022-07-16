@@ -1,17 +1,15 @@
 import React from 'react';
-import styles from './styles.module.css';
 import classnames from 'classnames';
+import { nanoid } from 'nanoid';
 import { MenuItem } from '../MenuItem/MenuItem';
+import styles from './styles.module.scss';
 
 export const Menu = ({ items, className }) => {
   return (
     <nav className={classnames(className, styles.root)}>
         {items.map(item => {
           return (
-            <>
-              <div className={styles.connection}></div>
-              <MenuItem {...item}/>
-            </>
+            <MenuItem key={nanoid()} {...item}/>
           )
         })}
     </nav>
