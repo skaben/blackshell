@@ -2,7 +2,7 @@ name: blackshell pages deploy
 
 on:
   push:
-    branches: [ actions ]
+    branches: [ feat/actions ]
   pull_request:
     branches: [ main ]
 
