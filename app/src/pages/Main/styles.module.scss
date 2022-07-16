@@ -1,0 +1,44 @@
+.root {
+  height: 100%;
+  padding: 0 1.5rem;
+}
+
+.content {
+  animation: scaling .3s ease-in;
+}
+
+.main {
+  height: 100%;
+  display: grid;
+  grid: 1fr / 420px 1fr;
+}
+
+.logo {
+  fill: var(--white);
+  width: 50%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1023px) {
+  .root {
+    padding: .5rem;
+  }
+  
+  .logo {
+    display: none;
+  }
+
+  .main {
+    display: block;
+    height: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+
+}
+
+@keyframes scaling {
+  from {transform: scale(0, 0);}
+  to {transform: scale(1, 1);}
+}
+

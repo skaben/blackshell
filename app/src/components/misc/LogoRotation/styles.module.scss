@@ -1,0 +1,100 @@
+.inner, .mid, .outer {
+  transition: all .3s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.inner {
+  opacity: .3;
+  animation: rotationTwo 15s infinite linear reverse;
+}
+
+.mid {
+  opacity: .15;
+  animation: rotation 9s infinite linear alternate;
+}
+
+.outer {
+  opacity: .3;
+  animation: rotationThree 18s infinite linear alternate-reverse;
+}
+
+.root:hover {
+  animation: zoomInOut .4s ease-in-out;
+}
+
+.root:hover {
+
+  .inner {
+    opacity: .4;
+    animation: rotation 18s .4s infinite linear;
+  }
+
+  .mid {
+    opacity: .25;
+    animation: rotation 12s .4s infinite alternate-reverse;
+  }
+
+  .outer {
+    opacity: .4;
+    animation: rotation 20s .4s infinite linear;
+  }
+
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes rotationTwo {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes rotationThree {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(180deg);
+  }
+  90% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(110%);
+  }
+  95% {
+    transform: scale(95%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}

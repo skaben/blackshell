@@ -2,21 +2,19 @@
   position: relative;
   letter-spacing: 1px;
   text-transform: uppercase;
-  min-height: 70px;
   animation: loadingRow .5s ease-in-out;
 }
 
 .title {
   position: absolute;
-  top: 45%;
+  top: 40%;
   transform: translateY(-50%);
   padding-left: 1.5rem;
   color: var(--color-off);
+  user-select: none;
 }
 
 .background {
-  width: 100%;
-  height: 100%;
   fill: rgba(255,255,255,.1);
   fill-opacity: .5;
   stroke: currentColor;
