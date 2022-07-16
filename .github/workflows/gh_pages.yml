@@ -2,10 +2,8 @@ name: blackshell pages deploy
 
 on:
   push:
-    branches: [ feat/actions ]
-  pull_request:
-    branches: [ main ]
-
+    branches: [ main, build ]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
