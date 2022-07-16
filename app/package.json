@@ -39,6 +39,7 @@
     "postcss-advanced-variables": "^3.0.1",
     "postcss-import": "^14.1.0",
     "postcss-loader": "^7.0.1",
+    "postcss-minify": "^1.1.0",
     "postcss-nested": "^5.0.6",
     "postcss-scss": "^4.0.4",
     "postcss-strip-inline-comments": "^0.1.5",
