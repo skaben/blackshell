@@ -1,0 +1,10 @@
+.root {
+  display: grid;
+  grid: 1fr 50px/ 5fr 1fr;
+  height: 100%;
+}
+
+.output {
+  grid-area: "output";
+  border: 1px solid white;
+}
