@@ -1,5 +1,6 @@
 .vscode
 *Zone.Identifier
+dist/
 
 # Local History for Visual Studio Code
 .history/
