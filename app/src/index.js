@@ -5,4 +5,4 @@ import { renderApp } from './App';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
-renderApp(root);  // 'cuz eslint is bullying me :'(
+renderApp(root); // 'cuz eslint is bullying me :'(
