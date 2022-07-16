@@ -1,14 +1,8 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import 'Assets/styles/main.css';
+import { createRoot } from 'react-dom/client';
+import 'Assets/styles/main.scss';
+import { renderApp } from './App';
 
-import { App } from "./App";
-
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+renderApp(root);  // 'cuz eslint is bullying me :'(
