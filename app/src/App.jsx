@@ -1,12 +1,12 @@
 import React from 'react';
 import { Main } from './pages/Main/Main';
-import { ConsolePage } from './pages/Console/ConsolePage';
+import { Console } from './pages/Console/Console';
 
 const App = () => {
   return (
     <>
-      {/* <ConsolePage/> */}
-      <Main/>
+      <Console/>
+      {/* <Main/> */}
     </>
   );
 }

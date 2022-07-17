@@ -1,8 +1,14 @@
 import React from 'react';
-import styles from './styles.module.css';
+import classnames from 'classnames';
+import styles from './styles.module.scss';
 
-export const ConsoleOutput = () => {
+export const ConsoleOutput = ({rows, className}) => {
   return (
-    <div className={styles.root}></div>
+    <div className={classnames(styles.root, className)}>
+      <div className={styles.output}>
+        {rows?.length ? rows.map(r => <p>{r}</p>) : ""}
+      </div>
+      <div className={styles.input}></div>
+    </div>
   )
 }

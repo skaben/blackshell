@@ -1,0 +1,16 @@
+.root {
+  display: grid;
+  grid: 1fr / 1fr;
+  height: 100%;
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid transparent;
+  padding: 1rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 80vh;
+}
