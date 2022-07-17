@@ -1,4 +1,4 @@
-name: blackshell pages deploy
+name: gh-pages
 
 on:
   push:
