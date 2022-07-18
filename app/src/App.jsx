@@ -1,20 +1,25 @@
 import React from 'react';
 import { Main } from './pages/Main/Main';
-import { Console } from './pages/Console/Console';
+import { useSelector, Provider } from 'react-redux';
+import { store } from './store';
 
 const App = () => {
+  const modes = useSelector(state => state.modes);
+  const config = useSelector(state => state.config);
+
+  const currentMode = modes[config.current] !== true || modes[config.default];
+
   return (
-    <>
-      <Console/>
-      {/* <Main/> */}
-    </>
+    currentMode.power ? <Main/> : <Offline/>
   );
 }
 
 export const renderApp = (root) => {
   root.render(
     <React.StrictMode>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>
   );
 }
