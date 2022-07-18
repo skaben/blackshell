@@ -1,10 +1,4 @@
 .root {
-  display: grid;
-  grid: 1fr / 1fr;
-  height: 100%;
-}
-
-.output {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -12,5 +6,6 @@
   padding: 1rem;
   overflow-x: hidden;
   overflow-y: scroll;
+  height: 100%;
   max-height: 80vh;
 }
