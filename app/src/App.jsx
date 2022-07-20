@@ -1,17 +1,18 @@
 import React from 'react';
-import { Main } from './pages/Main/Main';
-import { Offline } from './pages/Offline/Offline'
 import { useSelector, Provider } from 'react-redux';
 import { store } from './store';
+import { Online } from 'Pages/Online/Online.jsx';
+import { PowerOff } from 'Pages/PowerOff/PowerOff.jsx';
+
 
 const App = () => {
   const modes = useSelector(state => state.modes);
   const config = useSelector(state => state.config);
 
-  const currentMode = modes[config.current] !== true || modes[config.default];
+  const currentMode = modes[config.current] || modes[config.default];
 
   return (
-    currentMode.power ? <Main/> : <Offline/>
+    currentMode?.power === true ? <Online/> : <PowerOff/>
   );
 }
 
