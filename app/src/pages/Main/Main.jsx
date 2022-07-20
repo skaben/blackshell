@@ -46,7 +46,7 @@ export const Main = () => {
         }
         footer={<RandomizeText value={"this is screen where all routing should happens"}></RandomizeText>}
       />
-      <Background className={styles.background}/>
+      <Background/>
     </div>
   )
 }

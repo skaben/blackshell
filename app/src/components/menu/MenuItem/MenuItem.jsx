@@ -15,7 +15,7 @@ export const MenuItem = ({type, value, text, timer, locked, delay}) => {
         setKey(nanoid());
       }}
     >
-      <RandomizeText key={key} value={text} className={styles.title} rate={scrambleRate}/>
+      <RandomizeText id={key} value={text} className={styles.title} rate={scrambleRate}/>
       <BackgroundImage className={styles.background}/>
     </div>
   )

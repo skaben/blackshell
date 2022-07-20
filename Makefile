@@ -1,18 +1,22 @@
 .DEFAULT_GOAL := help
+APP_NAME=blackshell
 
 ifeq (run,$(firstword $(MAKECMDGOALS)))
   RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   $(eval $(RUN_ARGS):;@:)
 endif
 
-start:  ## start blackshell dev
+start:  ## start dev
 	@docker-compose up -d --force-recreate
 
 stop:  ## full stop
 	@docker-compose down --remove-orphans
 
+sh:  ## get shell inside app container
+	@docker-compose exec ${APP_NAME} sh
+
 run:  ## start service with argument passed to npm run (make run start | make run build)
-	@docker-compose run --rm --service-ports react-app sh -c "npm run $(RUN_ARGS)"
+	@docker-compose run --rm --service-ports ${APP_NAME} sh -c "npm run $(RUN_ARGS)"
 
 docker-build:  ## rebuild docker image (no cache)
 	@docker-compose down -v
