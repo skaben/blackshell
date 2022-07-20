@@ -1,8 +1,9 @@
 import React from 'react';
-import { Main } from './pages/Main/Main';
-import { PowerOff } from 'Components/states/PowerOff/PowerOff.jsx';
 import { useSelector, Provider } from 'react-redux';
 import { store } from './store';
+import { Online } from 'Pages/Online/Online.jsx';
+import { PowerOff } from 'Pages/PowerOff/PowerOff.jsx';
+
 
 const App = () => {
   const modes = useSelector(state => state.modes);
@@ -11,7 +12,7 @@ const App = () => {
   const currentMode = modes[config.current] || modes[config.default];
 
   return (
-    currentMode.power ? <Main/> : <PowerOff/>
+    currentMode?.power === true ? <Online/> : <PowerOff/>
   );
 }
 
