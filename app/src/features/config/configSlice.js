@@ -7,6 +7,10 @@ const initialState = {
   api_url: '',
   current: 'default',
   modes: ['default'],
+  user: {
+    selected: '',
+    auth: false
+  }
 };
 
 const configSlice = createSlice({
@@ -15,9 +19,19 @@ const configSlice = createSlice({
   reducers: {
     currentToggle(state) {
       state.current = !state.current;
+    },
+    userSelect(state, payload) {
+      state.user.selected = payload?.username || '';
+    },
+    userAuth(state) {
+      state.user.auth = true;
+    },
+    userLogout(state) {
+      state.user.auth = false;
+      state.user.selected = '';
     }
   },
 });
 
-export const {currentToggle} = configSlice.actions;
+export const {currentToggle, userSelect, userAuth, userLogout} = configSlice.actions;
 export default configSlice.reducer;
