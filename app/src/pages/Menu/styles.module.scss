@@ -1,37 +1,27 @@
 .root {
-  height: 100%;
-  padding: 0 1.5rem;
-}
-
-.content {
   animation: scaling .3s ease-in;
 }
 
 .main {
   height: 100%;
   display: grid;
-  grid: 1fr / 420px 1fr;
+  grid: 1fr / var(--sm-breakpoint) 1fr;
+  padding-left: 1.5rem;
 }
 
-.logo {
-  fill: var(--white);
-  width: 50%;
-  margin: auto;
-}
+
+
 
 @media only screen and (max-width: 1023px) {
   .root {
     padding: .5rem;
   }
   
-  .logo {
-    display: none;
-  }
-
   .main {
     display: block;
     height: 100%;
-    max-width: 400px;
+    padding: 0;
+    max-width: var(--min-size);
     margin: auto;
   }
 
