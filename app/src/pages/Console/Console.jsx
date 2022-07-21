@@ -25,13 +25,11 @@ export const Console = () => {
   }
 
   return (
-    <>
-      <Layout className={styles.root}
-        header={<RandomizeText value={'this is future console screen, work in progress'}/>}
-        main={<ConsoleOutput rows={state.rows}/>}
-        footer={<ConsoleInput submitInput={addStdoutRow}/>}
-      ></Layout>
-      <Background/>
-    </>
+    <Layout className={styles.root}
+      header={<RandomizeText value={'this is future console screen, work in progress'}/>}
+      main={<ConsoleOutput rows={state.rows}/>}
+      footer={<ConsoleInput submitInput={addStdoutRow}/>}
+      background={<Background/>}
+    ></Layout>
   )
 }

@@ -22,7 +22,11 @@ const reducer = (state, action) => {
   }
 }
 
-export const RandomizeText = ({ value, className, rate=600 }) => {
+export const RandomizeText = ({ value='', rate=600, className }) => {
+  if (value === '') {
+    throw new Error('value cannot be empty');
+  }
+
   const [state, dispatch] = useReducer(reducer, {text: Array.from(value).fill(' ')});
   let symbols = value.split('') || [];
 

@@ -1,16 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import defaultMode from './constants';
 
-const initialState = {
-  default: {
-    id: 'default',
-    power: true,
-    blocked: false,
-    header: 'terminal default mode header',
-    footer: 'terminal default mode footer',
-    users: [],
-    menu: [],
-  },
-};
+const initialState = defaultMode;
 
 const modesSlice = createSlice({
   name: 'modes',

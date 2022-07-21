@@ -1,18 +1,20 @@
 import React from 'react';
 import { useSelector, Provider } from 'react-redux';
-import { store } from './store';
+import { getCurrentMode } from 'Features/modes/selectors.js';
+import { store } from './store.js';
 import { Online } from 'Pages/Online/Online.jsx';
 import { PowerOff } from 'Pages/PowerOff/PowerOff.jsx';
+import { MenuPage } from './pages/Menu/Menu.jsx';
+import { LoginPage } from './pages/Login/LoginPage.jsx';
 
 
 const App = () => {
-  const modes = useSelector(state => state.modes);
-  const config = useSelector(state => state.config);
-
-  const currentMode = modes[config.current] || modes[config.default];
+  const currentMode = useSelector(getCurrentMode);
 
   return (
-    currentMode?.power === true ? <Online/> : <PowerOff/>
+    // currentMode?.power === true ? <Online/> : <PowerOff/>
+    // currentMode?.power === true ? <MenuPage/> : <PowerOff/>
+    currentMode?.power === true ? <LoginPage/> : <PowerOff/>
   );
 }
 
