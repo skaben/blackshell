@@ -1,0 +1,75 @@
+.root {
+  width: 100%;
+}
+
+.label {
+  font-size: .65rem;
+  letter-spacing: 2px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  line-height: 1.5rem;
+}
+
+.details {
+  display: grid;
+  grid: 1fr 1fr / 1fr 1fr;
+  grid-template-areas:
+    "logo username"
+    "logo password";
+  padding: 1rem;
+  border: 1px dashed rgba(var(--color-white-val), .3);
+  background-color: rgba(var(--color-white-val), .15);
+  gap: 1rem;
+}
+
+.logo {
+  grid-area: logo;
+  opacity: .3;
+  color: transparent;
+  stroke: var(--color-white);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.title {
+  grid-area: username;
+ 
+  .title__name {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.password {
+  grid-area: password;
+
+  input {
+    line-height: 2rem;
+    font-size: 1.25rem;
+    outline: none;
+    background: none;
+    box-shadow: none;
+    color: white;
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--color-grey);
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .details {
+    grid: 1fr / 1fr 4fr;
+    grid-template-areas:
+      "username"
+      "password";  
+  }
+}

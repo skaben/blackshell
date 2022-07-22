@@ -1,9 +1,32 @@
 .root {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .row {
-  max-width: var(--min-size);
+  font-weight: 200;
+  outline: none;
+
+  &:focus, &:active, &:hover {
+    font-weight: 600;
+    text-decoration: underline;
+
+    &::before {
+      position: absolute;
+      bottom: 50%;
+      left: .5rem;
+      font-size: .75rem;
+      content: "> ";
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 50%;
+      right: 10%;
+      font-size: .75rem;
+      content: "---"
+    }
+  }
 }
 
 .users {
@@ -12,13 +35,12 @@
   flex-direction: column;
   gap: .5rem;
   margin-top: 3rem;
-  padding: 1rem 1.5rem;
+  padding: .5rem 1.5rem;
   border-left: 1px dotted rgba(var(--color-main-val), .5);
 }
 
 .login {
   min-width: var(--min-size);
-  align-self: center;
   margin: auto;
 }
 
