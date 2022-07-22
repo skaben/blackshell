@@ -1,5 +1,5 @@
 .vscode
-*Zone.Identifier
+*.Identifier
 app/dist/
 
 # Local History for Visual Studio Code
