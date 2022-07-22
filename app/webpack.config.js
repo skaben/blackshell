@@ -53,7 +53,8 @@ module.exports = {
       Pages: path.resolve(__dirname, 'src/pages'),
       Components: path.resolve(__dirname, 'src/components'),
       Assets: path.resolve(__dirname, 'src/assets'),
-      Features: path.resolve(__dirname, 'src/features')
+      Features: path.resolve(__dirname, 'src/features'),
+      Helpers: path.resolve(__dirname, 'src/helpers')
     }
   },
   output: {
