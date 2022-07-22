@@ -3,6 +3,22 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   animation: loadingRow .5s ease-in-out;
+
+
+  &:hover, &:focus, &:active {
+    .background {
+      transition: all .75s;
+      color: var(--color-accent);
+      stroke-opacity: 1;
+      fill-opacity: .7;
+    }
+  
+    .title {
+      transition: color .75s;
+      color: var(--color-white);
+    }
+  }
+  
 }
 
 .title {
@@ -20,18 +36,6 @@
   stroke: currentColor;
   stroke-width: .15;
   stroke-opacity: .5;
-  color: var(--color-white);
-}
-
-.root:hover .background {
-  transition: all .75s;
-  color: var(--color-accent);
-  stroke-opacity: 1;
-  fill-opacity: .7;
-}
-
-.root:hover .title {
-  transition: color .75s;
   color: var(--color-white);
 }
 

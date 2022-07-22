@@ -8,13 +8,20 @@ import styles from './styles.module.scss';
 
 export const Button = ({text, scrambleRate, className, isAnimated=true, ...rootDOMAttributes}) => {
   const rate = scrambleRate || 500;
+  const [hovering, setHovering] = useState(false);
   const [trigger, setTrigger] = useState('default');
+
+  const triggerOnHover = () => {
+    if (!hovering) setTrigger(nanoid());
+    setHovering(true);
+  }
 
   return (
     <div className={classnames(className, styles.root)}
-      onMouseEnter={() => {
-        setTrigger(nanoid());
-      }}
+      onMouseEnter={triggerOnHover}
+      onFocus={triggerOnHover}
+      onMouseLeave={() => setHovering(false)}
+      onBlur={() => setHovering(false)}
       {...rootDOMAttributes}
     >
       {
