@@ -1,5 +1,5 @@
 .root {
-  width: 100%;
+  position: relative;
 }
 
 .label {
@@ -12,25 +12,31 @@
   justify-content: space-between;
   text-transform: uppercase;
   line-height: 1.5rem;
+  min-height: 1.5rem;
 }
 
 .details {
+  position: inherit;
   display: grid;
-  grid: 1fr 1fr / 1fr 1fr;
+  grid: 2fr 2fr 1fr/ 1fr 2fr;
   grid-template-areas:
     "logo username"
-    "logo password";
-  padding: 1rem;
-  border: 1px dashed rgba(var(--color-white-val), .3);
-  background-color: rgba(var(--color-white-val), .15);
-  gap: 1rem;
+    "logo password"
+    "logo controls";
+  padding: 2rem 5% 2rem 2.25rem;
+  border: 1px dashed rgba(var(--color-white-val), .5);
+  background-color: rgba(var(--color-white-val), .1);
+  gap: .5rem 3rem;
 }
 
 .logo {
+  // display: none;
   grid-area: logo;
-  opacity: .3;
-  color: transparent;
-  stroke: var(--color-white);
+  opacity: .1;
+  color: var(--color-black);
+  stroke: var(--color-accent);
+  align-self: center;
+  margin: auto;
 }
 
 .row {
@@ -54,7 +60,7 @@
   grid-area: password;
 
   input {
-    line-height: 2rem;
+    line-height: 1.75rem;
     font-size: 1.25rem;
     outline: none;
     background: none;
@@ -65,11 +71,49 @@
   }
 }
 
+.controls {
+  grid-area: controls;
+  position: absolute;
+  flex-direction: row;
+  justify-content: flex-end;
+  top: 70%;
+  right: 0;
+  padding: 1rem;
+  padding-right: 0;
+
+  .control {
+    display: inline-block;
+    padding: 1rem;
+    color: var(--color-grey);
+    background-color: rgb(54, 54, 54);
+    border: 1px dashed rgba(var(--color-white-val), .5);
+    font-size: .75rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:hover {
+      transition: all .2s;
+      color: var(--color-main);
+      border: 1px dashed rgba(var(--color-accent-val), .7);
+      background-color: rgb(84, 84, 84);
+    }
+  }
+
+  .control:last-child {
+    margin-left: 1rem;
+  }
+}
+
 @media only screen and (max-width: 420px) {
+  .logo {
+    display: none;
+  }
+
   .details {
-    grid: 1fr / 1fr 4fr;
+    grid: 2fr 2fr 1fr/ 1fr;
     grid-template-areas:
       "username"
-      "password";  
+      "password"
+      "controls";
   }
 }

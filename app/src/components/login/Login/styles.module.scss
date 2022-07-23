@@ -6,10 +6,10 @@
 .row {
   font-weight: 200;
   outline: none;
+  animation: loadingRow .5s ease-in-out;
 
   &:focus, &:active, &:hover {
-    font-weight: 600;
-    text-decoration: underline;
+    text-decoration: dashed;
 
     &::before {
       position: absolute;
@@ -40,8 +40,11 @@
 }
 
 .login {
+  flex-grow: 1;
+  max-width: 640px;
   min-width: var(--min-size);
   margin: auto;
+  animation: loadingRow .15s ease-in;
 }
 
 .logo {
@@ -56,4 +59,9 @@
     background: rgba(lighten(var(--color-danger-val), 15%), .05);
     border: 1px dotted rgba(var(--color-danger-val), 1);
   }
+}
+
+@keyframes loadingRow {
+  from {transform: scaleY(.1);}
+  to {transform: scaleY(1);}
 }

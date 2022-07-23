@@ -2,8 +2,6 @@
   position: relative;
   letter-spacing: 1px;
   text-transform: uppercase;
-  animation: loadingRow .5s ease-in-out;
-
 
   &:hover, &:focus, &:active {
     .background {
@@ -37,11 +35,6 @@
   stroke-width: .15;
   stroke-opacity: .5;
   color: var(--color-white);
-}
-
-@keyframes loadingRow {
-  from {transform: scale(.1, .1);}
-  to {transform: scaleX(1, 1);}
 }
 
 @media only screen and (max-width: 468px) {
