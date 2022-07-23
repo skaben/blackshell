@@ -1,0 +1,119 @@
+.root {
+  position: relative;
+}
+
+.label {
+  font-size: .65rem;
+  letter-spacing: 2px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  line-height: 1.5rem;
+  min-height: 1.5rem;
+}
+
+.details {
+  position: inherit;
+  display: grid;
+  grid: 2fr 2fr 1fr/ 1fr 2fr;
+  grid-template-areas:
+    "logo username"
+    "logo password"
+    "logo controls";
+  padding: 2rem 5% 2rem 2.25rem;
+  border: 1px dashed rgba(var(--color-white-val), .5);
+  background-color: rgba(var(--color-white-val), .1);
+  gap: .5rem 3rem;
+}
+
+.logo {
+  // display: none;
+  grid-area: logo;
+  opacity: .1;
+  color: var(--color-black);
+  stroke: var(--color-accent);
+  align-self: center;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.title {
+  grid-area: username;
+ 
+  .title__name {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.password {
+  grid-area: password;
+
+  input {
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+    outline: none;
+    background: none;
+    box-shadow: none;
+    color: white;
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--color-grey);
+  }
+}
+
+.controls {
+  grid-area: controls;
+  position: absolute;
+  flex-direction: row;
+  justify-content: flex-end;
+  top: 70%;
+  right: 0;
+  padding: 1rem;
+  padding-right: 0;
+
+  .control {
+    display: inline-block;
+    padding: 1rem;
+    color: var(--color-grey);
+    background-color: rgb(54, 54, 54);
+    border: 1px dashed rgba(var(--color-white-val), .5);
+    font-size: .75rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:hover {
+      transition: all .2s;
+      color: var(--color-main);
+      border: 1px dashed rgba(var(--color-accent-val), .7);
+      background-color: rgb(84, 84, 84);
+    }
+  }
+
+  .control:last-child {
+    margin-left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .logo {
+    display: none;
+  }
+
+  .details {
+    grid: 2fr 2fr 1fr/ 1fr;
+    grid-template-areas:
+      "username"
+      "password"
+      "controls";
+  }
+}
