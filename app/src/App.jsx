@@ -7,7 +7,7 @@ import { PowerOff } from 'Pages/PowerOff/PowerOff.jsx';
 import { MenuPage } from './pages/Menu/Menu.jsx';
 import { LoginPage } from './pages/Login/LoginPage.jsx';
 import { Timer } from 'Components/misc/Timer/Timer.jsx';
-import { HackGame } from 'Components/games/hack/HackGame/HackGame.jsx';
+import { Hack } from 'Components/games/hack/Hack/Hack.jsx';
 
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
     // currentMode?.power === true ? <MenuPage/> : <PowerOff/>
     // currentMode?.power === true ? <LoginPage/> : <PowerOff/>
     // <Timer seconds={10} onEnd={() => console.log('fok it')}/>
-    <HackGame/>
+    <Hack/>
   );
 }
 

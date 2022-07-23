@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.25em;
+  padding: 1em;
+
+  .symbol {
+    color: red;
+    cursor: pointer;
+    outline: none;
+
+    &:hover, &:focus, &:active {
+      font-weight: 600;
+    }
+  }
+}

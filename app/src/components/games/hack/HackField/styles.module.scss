@@ -1,15 +1,4 @@
 .root {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.trace {
-  font-size: 1.25em;
-  padding: 1em;
-}
-
-.field {
   display: grid;
   align-content: center;
   justify-content: start;
