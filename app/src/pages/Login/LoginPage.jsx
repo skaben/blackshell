@@ -12,7 +12,7 @@ export const LoginPage = () => {
   const {header, footer} = titles?.login || titles.default;
 
   return (
-    <Layout
+    <Layout className={styles.root}
       header={<p className={styles.header}>{header}</p>}
       main={<Login className={styles.main}/>}
       footer={<p className={styles.footer}>{footer}</p>}
