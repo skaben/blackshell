@@ -31,6 +31,7 @@
 
 .users {
   min-width: var(--min-size);
+  max-width: 30%;
   display: flex;
   flex-direction: column;
   gap: .5rem;
