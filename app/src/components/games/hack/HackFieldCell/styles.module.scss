@@ -1,0 +1,18 @@
+.root {
+  line-height: 2.5em;
+  align-self: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid transparent;
+  color: rgba(var(--color-main-val), .9);
+
+  &:hover {
+    cursor: pointer;
+    border: 1px dotted rgba(var(--color-white-val), .75);
+  }
+}
+
+.highlighted {
+  color: red !important;
+}

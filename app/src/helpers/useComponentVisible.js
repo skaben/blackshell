@@ -25,5 +25,5 @@ export default function useComponentVisible(initialState) {
         };
     });
 
-    return { ref, isComponentVisible, setIsComponentVisible };
+    return [ ref, isComponentVisible, setIsComponentVisible ];
 }

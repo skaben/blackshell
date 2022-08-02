@@ -10,7 +10,7 @@ import styles from './styles.module.scss';
 export const Login = ({ className }) => {
   const users = getUsers();
   const [ currentUser, setCurrentUser ] = useState('');
-  const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
+  const [ ref, isComponentVisible, setIsComponentVisible ] = useComponentVisible(false);
 
   useEffect(() => { 
     if (currentUser !== '') {

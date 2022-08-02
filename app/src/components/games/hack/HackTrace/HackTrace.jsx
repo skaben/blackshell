@@ -31,6 +31,7 @@ const HackTrace = ({className, source, len=4, dataAttrName=''}) => {
 
   const highlightTrace = (e, highlight) => {
     const hexCode = e.target.getAttribute('data-trace');
+    // todo: должен быть виртуальный хэш по dataAttrName, чтобы не дергать DOM?
     const elements = document.querySelectorAll(`[${dataAttrName}='${hexCode}']`);
     elements.forEach(e => e.style.backgroundColor = highlight ? 'rgba(var(--color-danger-val), .3)' : 'transparent');
   }

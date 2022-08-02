@@ -1,25 +1,9 @@
 .root {
-  display: grid;
-  align-content: center;
-  justify-content: start;
   font-size: 1.25em;
 }
 
 .cell {
-  line-height: 2.5em;
-  width: 2.5em;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: 1px solid transparent;
-  color: rgba(var(--color-main-val), .9);
-
   &:nth-child(even) {
     color: rgba(var(--color-white-val), .9);
-  }
-
-  &:hover {
-    cursor: pointer;
-    border: 1px dotted rgba(var(--color-white-val), .75);
   }
 }
