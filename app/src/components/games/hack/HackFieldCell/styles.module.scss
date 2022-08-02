@@ -9,10 +9,14 @@
 
   &:hover {
     cursor: pointer;
-    border: 1px dotted rgba(var(--color-white-val), .75);
+    // border: 1px dotted rgba(var(--color-white-val), .75);
   }
 }
 
 .highlighted {
-  color: red !important;
+  background-color: rgba(var(--color-main-val), .25);
+}
+
+.selected {
+  border: 1px solid rgba(var(--color-main-val), .5);
 }

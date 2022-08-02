@@ -1,8 +1,11 @@
 import React from 'react';
+import {useContext} from 'react';
 import classnames from 'classnames';
 import {nanoid} from 'nanoid';
 import styles from './styles.module.scss';
 import { randomDecimal } from 'Helpers/misc.js';
+import { HackContext } from '../context';
+import { HackTraceCell } from '../HackTraceCell/HackTraceCell';
 
 const getPrevious = (index, maxVal) => {
   const result = randomDecimal(0, maxVal);
@@ -26,30 +29,15 @@ const getBacktrace = (arr, pathLength) => {
   });
 }
 
-const HackTrace = ({className, source, len=4, dataAttrName=''}) => {
+const Trace = ({source, len, className}) => {
   const symbols = getBacktrace(source, len);
-
-  const highlightTrace = (e, highlight) => {
-    const hexCode = e.target.getAttribute('data-trace');
-    // todo: должен быть виртуальный хэш по dataAttrName, чтобы не дергать DOM?
-    const elements = document.querySelectorAll(`[${dataAttrName}='${hexCode}']`);
-    elements.forEach(e => e.style.backgroundColor = highlight ? 'rgba(var(--color-danger-val), .3)' : 'transparent');
-  }
 
   return (
     <div className={classnames(styles.root, className)}>
-      {symbols.map((hex, idx) => <div className={styles.symbol}
-                                      tabIndex={idx + 1}
-                                      data-trace={hex}
-                                      key={nanoid()}
-                                      onMouseEnter={(e) => highlightTrace(e, true)}
-                                      onFocus={(e) => highlightTrace(e, true)}
-                                      onMouseLeave={(e) => highlightTrace(e, false)}
-                                      onBlur={(e) => highlightTrace(e, false)}
-                                      >{hex}</div>)}
+      {symbols.map((hexCode, idx) => <HackTraceCell key={nanoid()} hexCode={hexCode} index={idx}/>)}
     </div>
   )
 }
 
-const HackTraceMemoized = React.memo(HackTrace);
-export { HackTrace, HackTraceMemoized };
+const HackTrace = React.memo(Trace);
+export { HackTrace };

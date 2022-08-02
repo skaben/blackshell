@@ -1,0 +1,9 @@
+.symbol {
+  color: red;
+  cursor: pointer;
+  outline: none;
+
+  &:hover, &:focus, &:active {
+    font-weight: 600;
+  }
+}

@@ -1,11 +1,12 @@
 import React from 'react';
-import {useState, useMemo, useEffect} from 'react';
+import {useState, useMemo, useContext} from 'react';
 import { randomDecimal } from 'Helpers/misc.js';
-import { HackTraceMemoized } from 'Components/games/hack/HackTrace/HackTrace.jsx';
+import { HackTrace } from 'Components/games/hack/HackTrace/HackTrace.jsx';
 import { HackField } from '../HackField/HackField';
 import { HackFieldCell } from '../HackFieldCell/HackFieldCell';
-import styles from './styles.module.scss';
 import { nanoid } from 'nanoid';
+import { HackContext, HackContextProvider } from '../context';
+import styles from './styles.module.scss';
 
 
 const generateField = (height, width) => {
@@ -15,34 +16,40 @@ const generateField = (height, width) => {
 export const Hack = () => {
   const height = 8;
   const width = 12;
-  const dataAttr = 'data-code';
+  const tries = 5;
 
   const field = useMemo(() => generateField(height, width), [retrigger]);
-  const [selected, setSelected] = useState([]);
   const [retrigger, setRetrigger] = useState(false);
 
-  const handleStart = () => {
-  }
-
-  const handleReset = () => {
-    setRetrigger(!retrigger);
+  const startState = {
+    'width': width,
+    'height': height,
+    'field': field,
+    'tries': tries
   }
 
   return (
-    <div className={styles.root}>
-      <HackTraceMemoized source={field} dataAttrName={dataAttr}/>
-      <div className={styles.field}>
-        <HackField className={styles.grid} source={field} setSelected={setSelected}>
-          {field.map((arr, idxRow) => {
-            return arr.map((hexValue, idxCol) => {
-              return <HackFieldCell key={nanoid()} id={`${idxRow}-${idxCol}`} selected={selected} className={styles.cell} hex={hexValue}/>
-            })
-          })}
-        </HackField>
+    <HackContextProvider addState={startState}>
+      <div className={styles.root}>
+        <HackTrace source={field} len={tries - 1}/>
+        {/* {state.end && <p>you failed</p>} */}
+        <div className={styles.field}>
+          <HackField className={styles.grid}>
+            {field.map((arr, idxRow) => {
+              return arr.map((hexValue, idxCol) => {
+                return <HackFieldCell key={nanoid()}
+                                      pos={`${idxRow}:${idxCol}`}
+                                      hex={hexValue}
+                                      className={styles.cell}
+                                      />
+              })
+            })}
+          </HackField>
+        </div>
+        {/* <button className={styles.start} onClick={handleStart}>START GAME</button> */}
+        <button className={styles.start} onClick={() => setRetrigger(!retrigger)}>RESET GAME</button>
       </div>
-      <button className={styles.start} onClick={handleStart}>START GAME</button>
-      <button className={styles.start} onClick={handleReset}>RESET GAME</button>
-    </div>
+    </HackContextProvider>
   )
 }
 
