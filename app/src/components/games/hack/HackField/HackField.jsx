@@ -7,10 +7,15 @@ import actions from '../context/actions';
 
 export const HackField = ({className, children}) => {
   const [state, dispatch] = useContext(HackContext);
-  const handleControls = (e) => dispatch({type: actions.MOVE, key: e.key});
+  const handleControls = (e) => {
+    if (!state.locked) dispatch({type: actions.LOCK, lock: true});
+    dispatch({type: actions.MOVE, key: e.key});
+  }
 
   return (
-    <div className={classnames(styles.root, className)}
+    <div className={classnames(styles.root, className, {
+      [styles.ignored]: state.success !== null
+    })}
          tabIndex="1"
          focus="true"
          style={{grid: `repeat(${state.height}, auto) / repeat(${state.width}, auto)`}}

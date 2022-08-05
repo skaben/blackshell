@@ -1,6 +1,10 @@
 const actions = {
+  INIT: 'INIT',
+  LOCK: 'LOCK',
   MOVE: 'MOVE',
-  HIGHLIGHT: 'HIGHLIGHT'
+  HIGHLIGHT: 'HIGHLIGHT',
+  BACKTRACE: 'BACKTRACE',
+  SUCCESS: 'SUCCESS'
 }
 
 export {actions};

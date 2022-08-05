@@ -8,6 +8,7 @@ import { MenuPage } from './pages/Menu/Menu.jsx';
 import { LoginPage } from './pages/Login/LoginPage.jsx';
 import { Timer } from 'Components/misc/Timer/Timer.jsx';
 import { Hack } from 'Components/games/hack/Hack/Hack.jsx';
+import { HackContextProvider } from './components/games/hack/context/index.js';
 
 
 const App = () => {

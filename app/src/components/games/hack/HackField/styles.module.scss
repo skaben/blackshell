@@ -9,3 +9,7 @@
     color: rgba(var(--color-white-val), .9);
   }
 }
+
+.ignored {
+  pointer-events: none;
+}

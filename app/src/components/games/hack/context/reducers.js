@@ -29,9 +29,8 @@ const positionReducer = (state, action) => {
       return {
         ...state,
         mode: newMode,
-        selected: [...state.selected, [state.row, state.col]],
+        cells: {...state.cells, selected: [...state.cells.selected, [state.row, state.col]]},
         step: state.step + 1,
-        end: state.step + 1 >= state.tries
       };
     default:
       return state;
@@ -40,10 +39,18 @@ const positionReducer = (state, action) => {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+    case actions.INIT:
+      return {...state, ...action.payload};
+    case actions.LOCK:
+      return {...state, locked: action.lock};
     case actions.MOVE:
       return positionReducer(state, action);
     case actions.HIGHLIGHT:
-      return {...state, highlighted: action.payload};
+      return {...state, cells: {...state.cells, highlighted: action.payload}};
+    case actions.BACKTRACE:
+      return {...state, solutions: action.payload};
+    case actions.SUCCESS:
+      return {...state, success: action.payload};
     default:
       return state;
   }

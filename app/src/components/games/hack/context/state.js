@@ -6,11 +6,14 @@ const hackState = {
   'height': 0,
   'col': 0,
   'row': 0,
-  'traceback': [],
-  'selected': [],
-  'highlighted': [],
-  'mode': 'horizontal',
-  'end': false
+  'mode': 'vertical',
+  'locked': false,
+  'success': null,
+  'cells': {
+    'selected': [],
+    'highlighted': []
+  },
+  'solutions': []
 }
 
 export { hackState };
